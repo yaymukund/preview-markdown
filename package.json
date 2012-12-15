@@ -1,0 +1,10 @@
+{
+  "name": "preview-markdown",
+  "version": "0.1.0",
+  "author": "Mukund Lakshman",
+  "description": "A dead simple script to preview markdown files.",
+  "dependencies": {
+    "marked": "0.2.x",
+    "highlight.js": "7.3.x"
+  }
+}
