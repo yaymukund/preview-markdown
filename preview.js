@@ -16,11 +16,11 @@ fs.watch(path, (eventType, filename) => {
   if (!fsTimeout) {
     fsTimeout = true;
     console.log(`File event: ${eventType}.`);
-    fs.readFile(path, 'utf-8', function(err, data) {
+    fs.readFile(filename, 'utf-8', function(err, data) {
       if (err) throw err;
   
       var html = TEMPLATE.replace('CONTENT', marked(data)),
-          htmlFilename = path.replace('^.*[\\\/]', '')
+          htmlFilename = filename.replace('^.*[\\\/]', '')
                              .replace(/\.(md|markdown)$/i, '.html');
   
       fs.writeFile(htmlFilename, html, function(err) {
